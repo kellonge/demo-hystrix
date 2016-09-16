@@ -23,6 +23,7 @@ public class SimpleCommandRunner implements CommandLineRunner {
         RequestCommand command = new RequestCommand("/normal/now");
 
         //excute
+        //means the result will return immediately
         PrintInterval.start();
         for (int i = 0; i < 10; i++) {
             logger.info("excute result " + command.execute());
@@ -30,6 +31,7 @@ public class SimpleCommandRunner implements CommandLineRunner {
         PrintInterval.end();
 
         //queue
+        //hystrix will put the reuslt in a `future` var, so that the request can invoke at sametime
         PrintInterval.start();
         List<Future<String>> futures = Lists.newArrayList();
         for (int i = 0; i < 10; i++) {
@@ -40,7 +42,5 @@ public class SimpleCommandRunner implements CommandLineRunner {
             logger.info("excute result " + future.get());
         }
         PrintInterval.end();
-
-
     }
 }
