@@ -1,6 +1,6 @@
 package com.kellonge.demo.hystrix;
 
-import com.kellonge.demo.hystrix.controller.SlowController;
+import com.kellonge.demo.hystrix.commons.HttpURLConnectionUtils;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import org.apache.log4j.Logger;

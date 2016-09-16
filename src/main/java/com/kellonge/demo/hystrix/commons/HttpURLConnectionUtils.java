@@ -1,4 +1,4 @@
-package com.kellonge.demo.hystrix;
+package com.kellonge.demo.hystrix.commons;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
